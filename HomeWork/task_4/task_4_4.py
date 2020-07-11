@@ -6,13 +6,16 @@ while True:
         break
     source_list = input_num.split(" ")
     output_list = []
-    # i = 0
-    # l = len(source_list)
-    # while i < l:
-    #     output_list.append(source_list[i])
-    #     i += 1
-    for i in source_list:
-        output_list.append(i)
+    choose = input('Выберите цикл: 1 - For, 2 - While\n')
+    if choose == '1':
+        i = 0
+        l = len(source_list)
+        while i < l:
+            output_list.append(source_list[i])
+            i += 1
+    elif choose == '2':
+        for i in source_list:
+            output_list.append(i)
     output_list.pop(0)
     output_list.append(source_list[0])
     print(f'Исходный список: {source_list}')
