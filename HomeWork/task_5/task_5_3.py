@@ -13,7 +13,6 @@ for i in range(200, 300):
             b.append(f)
             c += f
             dict_b.update({i: c})
-
     a.append(b)
     dict_a.update(dict_b)
 
