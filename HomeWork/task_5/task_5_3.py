@@ -8,7 +8,7 @@ for i in range(200, 300):
     b = []
     dict_b = {}
     c = 0
-    for f in range(1, i-1):
+    for f in range(1, i - 1):
         if i % f == 0:
             b.append(f)
             c += f

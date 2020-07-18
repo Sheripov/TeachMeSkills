@@ -12,5 +12,5 @@ for index, value in enumerate(mlist):
         break
     if mlist[index - 1] >= value < mlist[index + 1]:
         counter += 1
-print(f'Лист: {mlist}')
-print(f'Количество монотонно возраствющих участков: {counter}')
+print(f"Лист: {mlist}")
+print(f"Количество монотонно возраствющих участков: {counter}")

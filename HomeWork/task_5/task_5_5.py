@@ -8,4 +8,3 @@ for index, value in enumerate(mlist):
     if value % 2 == 0:
         mlist[index] = max_num
 print(mlist)
-

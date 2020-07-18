@@ -9,7 +9,7 @@
 # 105: 3 5 7 15 21 35
 a = []
 dict_a = {}
-for i in range(int(input('M: ')), int(input('N: ')) + 1):
+for i in range(int(input("M: ")), int(input("N: ")) + 1):
     b = []
     dict_b = {}
     c = []
@@ -17,11 +17,13 @@ for i in range(int(input('M: ')), int(input('N: ')) + 1):
         if i % f == 0:
             b.append(f)
             dict_b.update({i: b})
+        else:
+            dict_b.update({i: b})
 
     a.append(b)
     dict_a.update(dict_b)
 for key in dict_a.keys():
-    print(f'{key}: ', end=" ")
+    print(f"{key}: ", end=" ")
     for value in dict_a[key]:
-        print(f'{value}', end=" ")
+        print(f"{value}", end=" ")
     print()

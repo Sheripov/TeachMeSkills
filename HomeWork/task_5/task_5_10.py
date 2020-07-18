@@ -6,33 +6,39 @@
 from datetime import timedelta
 
 
-trains = [{'номер поезда': 1,
-           'пункт прибытия': 'Minsk',
-           'время прибытия': timedelta(hours=13, minutes=00),
-           'пункт отбытия': 'Gomel',
-           'время отбытия': timedelta(hours=10, minutes=00)
-           },
-          {'номер поезда': 2,
-           'пункт прибытия': 'Minsk',
-           'время прибытия': timedelta(hours=18, minutes=00),
-           'пункт отбытия': 'Grodno',
-           'время отбытия': timedelta(hours=10, minutes=00)
-           },
-          {'номер поезда': 3,
-           'пункт прибытия': 'Minsk',
-           'время прибытия': timedelta(hours=17, minutes=20),
-           'пункт отбытия': 'Brest',
-           'время отбытия': timedelta(hours=10, minutes=00)
-           },
-          {'номер поезда': 4,
-           'пункт прибытия': 'Minsk',
-           'время прибытия': timedelta(hours=17, minutes=00),
-           'пункт отбытия': 'Vitebsk',
-           'время отбытия': timedelta(hours=10, minutes=00)
-           }]
+trains = [
+    {
+        "номер поезда": 1,
+        "пункт прибытия": "Minsk",
+        "время прибытия": timedelta(hours=13, minutes=00),
+        "пункт отбытия": "Gomel",
+        "время отбытия": timedelta(hours=10, minutes=00),
+    },
+    {
+        "номер поезда": 2,
+        "пункт прибытия": "Minsk",
+        "время прибытия": timedelta(hours=18, minutes=00),
+        "пункт отбытия": "Grodno",
+        "время отбытия": timedelta(hours=10, minutes=00),
+    },
+    {
+        "номер поезда": 3,
+        "пункт прибытия": "Minsk",
+        "время прибытия": timedelta(hours=17, minutes=20),
+        "пункт отбытия": "Brest",
+        "время отбытия": timedelta(hours=10, minutes=00),
+    },
+    {
+        "номер поезда": 4,
+        "пункт прибытия": "Minsk",
+        "время прибытия": timedelta(hours=17, minutes=00),
+        "пункт отбытия": "Vitebsk",
+        "время отбытия": timedelta(hours=10, minutes=00),
+    },
+]
 
 for i in trains:
-    delta = i['время прибытия'] - i['время отбытия']
+    delta = i["время прибытия"] - i["время отбытия"]
     if delta >= timedelta(hours=7, minutes=20):
         print(f"\nНомер поезда: {i['номер поезда']}")
         print(f"Пункт прибытия: {i['пункт прибытия']}")
