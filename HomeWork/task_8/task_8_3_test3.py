@@ -1,6 +1,7 @@
 # Функция возвращает приближенное значение функции sin(x):
 # sin(x) = x − x3/(3!) + x5/(5!) − x7/(7!) + … .
 # В сумме учитываются все слагаемые, по модулю большие ε }
+import math
 
 def sin1(x: float, e: float) -> float:
     """
@@ -20,7 +21,8 @@ def sin1(x: float, e: float) -> float:
     return s
 
 
-x = float(input('x = '))  # вводим x
+# x = float(input('x = '))  # вводим x
+x = math.pi
 if x != 0:  # проверяем только для x ≠ 0
     for i in range(1, 7):  # количество вычислений = 6
         e = float(input(f'{i}) e = '))  # вводим точность вычисления

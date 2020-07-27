@@ -1,4 +1,4 @@
-from math import sin
+from math import sin, pi
 def sin1(x: float, e: float) -> float:
     """
     The function calculate sin(x, e)
@@ -20,7 +20,8 @@ def sin1(x: float, e: float) -> float:
     return s  # значение функции
 
 
-x = float(input('x = '))
+# x = float(input('x = '))
+x = pi
 if x != 0:  # проверяем только для x ≠ 0
     for i in range(6):
         eps = float(input('eps = '))
