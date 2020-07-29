@@ -1,13 +1,14 @@
-from math import sin, pi, factorial
+from math import sin
 
 
 def sin1(x: float, e: float) -> float:
-    """
-    The function calculate sin(x, e)
+    """The function calculate sin(x, e)
+
     :param x: Value in sin(x)
     :param e: Accuracy of calculate
     :return: Result of sin(x, e)
     """
+
     result_sum = x  # начальное значение функции(нулевой член ряда)
     mult_x = x  # нулевое значение числителя члена ряда
     mult_denominator = 1  # то же знаменателя
@@ -15,7 +16,8 @@ def sin1(x: float, e: float) -> float:
     counter = 1  # первый член
     while abs(term) > e:  # пока очередной больше точности
         mult_x *= -x ** 2  # домножаем числитель на  -x^2
-        mult_denominator *= 2 * counter * (2 * counter + 1)  # домножаем знаменатель до очередного факториала
+        # домножаем знаменатель до очередного факториала:
+        mult_denominator *= 2 * counter * (2 * counter + 1)
         term = mult_x / mult_denominator  # вычисляем очередной член
         result_sum += term  # считаем сумму
         counter += 1  # увеличиваем счетчик
