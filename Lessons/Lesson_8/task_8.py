@@ -19,4 +19,4 @@ def sm_to_m(x):
     return x * 10
 
 
-print(sm_to_m('10'))
+print(sm_to_m(10))
