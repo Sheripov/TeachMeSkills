@@ -45,6 +45,7 @@ def edit(request, id):
         return HttpResponseNotFound("<h2>Product not found</h2>")
 
 
+
 def delete(request, id):
     try:
         product = Product.objects.get(id=id)
