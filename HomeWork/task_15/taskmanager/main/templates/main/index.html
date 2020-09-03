@@ -13,6 +13,7 @@
                 <p>Цена: {{ el.price }}</p>
                 <p>Количество: {{ el.quantity }}</p>
                 <p>Комментарий: {{ el.comment }}</p>
+                <td><a href="edit/{{el.id}}">Изменить</a> | <a href="delete/{{el.id}}">Удалить</a></td>
             </div>
         {% endfor %}
     {% else %}
