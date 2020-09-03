@@ -11,11 +11,11 @@ class ProductForm(ModelForm):
                 'class': 'form-control',
                 'placeholder': 'Введите название продукта',
             }),
-            'price': TextInput(attrs={
+            'price': NumberInput(attrs={
                 'class': 'form-control',
                 'placeholder': 'Введите цену продукта',
             }),
-            'quantity': TextInput(attrs={
+            'quantity': NumberInput(attrs={
                 'class': 'form-control',
                 'placeholder': 'Количество',
             }),
