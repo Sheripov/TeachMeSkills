@@ -1,22 +1,46 @@
-inp = tuple('6 12'.split(" "))
-n = int(inp[0])
-k = int(inp[1])
+from collections import Counter
+
+inp = tuple(input().split(" "))
+
+table_size = int(inp[0])
+number_to_find = int(inp[1])
 
 
-def mult(n, k):
-    r = range(1, min(n, k) + 1)
-    count = 0
-    if 1 <= n <= 100000 and 1 <= k <= 1000000000:
-        # matrix = (i * j for i in r for j in r if i * j == k)
-        for i in r:
-            if i > k:
-                break
-            for j in r:
-                if j > k:
-                    break
-                if i * j == k:
-                    count += 1
-        return count
+def get_simple_divisors(n):
+    result = []
+    i = 2
+    while i < n:
+        if n % i == 0:
+            n /= i
+            result.append(i)
+        else:
+            i += 1
+    result.append(int(n))
+    return result
 
 
-print(mult(n, k))
+ls = get_simple_divisors(number_to_find)
+kkk = Counter(ls).items()
+d = [k for k, _ in kkk]
+m = [v for _, v in kkk]
+k = [0 for _ in range(len(set(ls)))]
+ln = range(len(m))
+divisors = set()
+try:
+    while True:
+        r = 1
+        for i1, i2 in zip(d, k):
+            r *= i1 ** i2
+        divisors.add(r)
+
+        k[0] += 1
+        for i in ln:
+            if k[i] > m[i]:
+                k[i] = 0
+                k[i + 1] += 1  # IndexError
+except IndexError:
+    pass
+
+divisors = {d for d in divisors if
+            d <= table_size and number_to_find / d <= table_size}
+print(len(divisors))
