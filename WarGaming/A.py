@@ -1,15 +1,13 @@
-inp = "6 12".split(" ")
+inp = tuple('6 12'.split(" "))
 n = int(inp[0])
 k = int(inp[1])
 
 
 def mult(n, k):
-    r = [i for i in range(1, min(n, k))]
-    print(r)
+    r = range(1, min(n, k) + 1)
     count = 0
     if 1 <= n <= 100000 and 1 <= k <= 1000000000:
-        # matrix = (i * j for i in r for j in r)
-        # matrix.sort()
+        # matrix = (i * j for i in r for j in r if i * j == k)
         for i in r:
             if i > k:
                 break
@@ -18,7 +16,7 @@ def mult(n, k):
                     break
                 if i * j == k:
                     count += 1
-    return count
+        return count
 
 
-mult(n, k)
+print(mult(n, k))
