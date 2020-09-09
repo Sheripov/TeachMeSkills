@@ -4,7 +4,7 @@ input_price = list(map(int, input().split(" ")))
 
 def numb_price(gold: int, price: list):
     number_price = [1, 2, 3, 4, 5, 6, 7, 8, 9]
-    output_price = dict(zip(number_price, input_price))
+    output_price = dict(zip(number_price, price))
     tmp_min = min(price)
     tmp_max = []
     for key in output_price:

@@ -1,4 +1,5 @@
 from django.conf.urls import url
+from django.contrib import admin
 from django.urls import path
 from .views import ProductCreate, ProductUpdate, ProductDelete, index, product_detail
 
@@ -8,5 +9,6 @@ urlpatterns = [
     url(r'add_product/$', ProductCreate.as_view(), name='product-add'),
     url(r'product/(?P<pk>[0-9]+)/$', ProductUpdate.as_view(), name='product-update'),
     url(r'product/(?P<pk>[0-9]+)/delete/$', ProductDelete.as_view(), name='product-delete'),
+
 
 ]
