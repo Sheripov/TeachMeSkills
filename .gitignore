@@ -1,2 +1,6 @@
 /.idea
 /venv
+# Config django
+CONFIG.YAML
+SECRET_KEY.YAML
+/__pycache__

@@ -15,7 +15,16 @@ def numb_price(gold: int, price: list):
             return -1
     except ZeroDivisionError:
         return -1
-    return (gold // tmp_min) * str(max(tmp_max))
+    result: list = list((gold // tmp_min) * str(max(tmp_max)))
+    sum = len(result) * output_price[max(tmp_max)]
+    for index, value in enumerate(result):
+        for j in range(9, 0, -1):
+            if (sum - output_price[max(tmp_max)]) + output_price[j] <= gold:
+                result[index] = j
+                sum = (sum - output_price[max(tmp_max)]) + output_price[j]
+                break
+    return "".join(map(str, result))
 
 
 print(numb_price(number, input_price))
+
