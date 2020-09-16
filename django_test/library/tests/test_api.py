@@ -31,8 +31,9 @@ class BookDetailAPIViewTest(APITestCase):
             author_name='Test1 author1',
             description='Test1 description1'
         )
-        url = reverse('books-detail')
+        url = reverse('books-detail', args=([1]))
         response = self.client.get(url)
+        print(response.data)
         serializer_data = BookSerializer(book_1).data
         self.assertEqual(status.HTTP_200_OK, response.status_code)
         self.assertEqual(serializer_data, response.data)

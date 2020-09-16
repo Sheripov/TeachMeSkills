@@ -21,8 +21,8 @@
         </h1>
         <img id="keyboard_icon" src="keybd_closed.png" alt="Show keyboard shortcuts" />
         <h2 class="stats">
-            14 statements &nbsp;
-            <button type="button" class="run shortkey_r button_toggle_run" title="Toggle lines run">14 run</button>
+            22 statements &nbsp;
+            <button type="button" class="run shortkey_r button_toggle_run" title="Toggle lines run">22 run</button>
             <button type="button" class="mis show_mis shortkey_m button_toggle_mis" title="Toggle lines missing">0 missing</button>
             <button type="button" class="exc show_exc shortkey_x button_toggle_exc" title="Toggle lines excluded">0 excluded</button>
         </h2>
@@ -58,8 +58,8 @@
     <p id="t5" class="run"><span class="n"><a href="#t5">5</a></span><span class="t"><span class="key">from</span> <span class="nam">books</span><span class="op">.</span><span class="nam">serializers</span> <span class="key">import</span> <span class="nam">BookSerializer</span>&nbsp;</span><span class="r"></span></p>
     <p id="t6" class="pln"><span class="n"><a href="#t6">6</a></span><span class="t">&nbsp;</span><span class="r"></span></p>
     <p id="t7" class="pln"><span class="n"><a href="#t7">7</a></span><span class="t">&nbsp;</span><span class="r"></span></p>
-    <p id="t8" class="run"><span class="n"><a href="#t8">8</a></span><span class="t"><span class="key">class</span> <span class="nam">TestBookListAPIView</span><span class="op">(</span><span class="nam">APITestCase</span><span class="op">)</span><span class="op">:</span>&nbsp;</span><span class="r"></span></p>
-    <p id="t9" class="run"><span class="n"><a href="#t9">9</a></span><span class="t">    <span class="key">def</span> <span class="nam">test_get</span><span class="op">(</span><span class="nam">self</span><span class="op">)</span><span class="op">:</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t8" class="run"><span class="n"><a href="#t8">8</a></span><span class="t"><span class="key">class</span> <span class="nam">BookListAPIViewTest</span><span class="op">(</span><span class="nam">APITestCase</span><span class="op">)</span><span class="op">:</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t9" class="run"><span class="n"><a href="#t9">9</a></span><span class="t">    <span class="key">def</span> <span class="nam">test_get_book_list</span><span class="op">(</span><span class="nam">self</span><span class="op">)</span><span class="op">:</span>&nbsp;</span><span class="r"></span></p>
     <p id="t10" class="run"><span class="n"><a href="#t10">10</a></span><span class="t">        <span class="nam">book_1</span> <span class="op">=</span> <span class="nam">Books</span><span class="op">.</span><span class="nam">objects</span><span class="op">.</span><span class="nam">create</span><span class="op">(</span>&nbsp;</span><span class="r"></span></p>
     <p id="t11" class="pln"><span class="n"><a href="#t11">11</a></span><span class="t">            <span class="nam">title</span><span class="op">=</span><span class="str">'Test1 Titile1'</span><span class="op">,</span>&nbsp;</span><span class="r"></span></p>
     <p id="t12" class="pln"><span class="n"><a href="#t12">12</a></span><span class="t">            <span class="nam">author_name</span><span class="op">=</span><span class="str">'Test1 author1'</span><span class="op">,</span>&nbsp;</span><span class="r"></span></p>
@@ -75,12 +75,26 @@
     <p id="t22" class="run"><span class="n"><a href="#t22">22</a></span><span class="t">        <span class="nam">serializer_data</span> <span class="op">=</span> <span class="nam">BookSerializer</span><span class="op">(</span><span class="op">[</span><span class="nam">book_1</span><span class="op">,</span> <span class="nam">book_2</span><span class="op">]</span><span class="op">,</span> <span class="nam">many</span><span class="op">=</span><span class="key">True</span><span class="op">)</span><span class="op">.</span><span class="nam">data</span>&nbsp;</span><span class="r"></span></p>
     <p id="t23" class="run"><span class="n"><a href="#t23">23</a></span><span class="t">        <span class="nam">self</span><span class="op">.</span><span class="nam">assertEqual</span><span class="op">(</span><span class="nam">status</span><span class="op">.</span><span class="nam">HTTP_200_OK</span><span class="op">,</span> <span class="nam">response</span><span class="op">.</span><span class="nam">status_code</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
     <p id="t24" class="run"><span class="n"><a href="#t24">24</a></span><span class="t">        <span class="nam">self</span><span class="op">.</span><span class="nam">assertEqual</span><span class="op">(</span><span class="nam">serializer_data</span><span class="op">,</span> <span class="nam">response</span><span class="op">.</span><span class="nam">data</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t25" class="pln"><span class="n"><a href="#t25">25</a></span><span class="t">&nbsp;</span><span class="r"></span></p>
+    <p id="t26" class="pln"><span class="n"><a href="#t26">26</a></span><span class="t">&nbsp;</span><span class="r"></span></p>
+    <p id="t27" class="run"><span class="n"><a href="#t27">27</a></span><span class="t"><span class="key">class</span> <span class="nam">BookDetailAPIViewTest</span><span class="op">(</span><span class="nam">APITestCase</span><span class="op">)</span><span class="op">:</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t28" class="run"><span class="n"><a href="#t28">28</a></span><span class="t">    <span class="key">def</span> <span class="nam">test_get_book_details</span><span class="op">(</span><span class="nam">self</span><span class="op">)</span><span class="op">:</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t29" class="run"><span class="n"><a href="#t29">29</a></span><span class="t">        <span class="nam">book_1</span> <span class="op">=</span> <span class="nam">Books</span><span class="op">.</span><span class="nam">objects</span><span class="op">.</span><span class="nam">create</span><span class="op">(</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t30" class="pln"><span class="n"><a href="#t30">30</a></span><span class="t">            <span class="nam">title</span><span class="op">=</span><span class="str">'Test1 Titile1'</span><span class="op">,</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t31" class="pln"><span class="n"><a href="#t31">31</a></span><span class="t">            <span class="nam">author_name</span><span class="op">=</span><span class="str">'Test1 author1'</span><span class="op">,</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t32" class="pln"><span class="n"><a href="#t32">32</a></span><span class="t">            <span class="nam">description</span><span class="op">=</span><span class="str">'Test1 description1'</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t33" class="pln"><span class="n"><a href="#t33">33</a></span><span class="t">        <span class="op">)</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t34" class="run"><span class="n"><a href="#t34">34</a></span><span class="t">        <span class="nam">url</span> <span class="op">=</span> <span class="nam">reverse</span><span class="op">(</span><span class="str">'books-detail'</span><span class="op">,</span> <span class="nam">args</span><span class="op">=</span><span class="op">(</span><span class="op">[</span><span class="num">1</span><span class="op">]</span><span class="op">)</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t35" class="run"><span class="n"><a href="#t35">35</a></span><span class="t">        <span class="nam">response</span> <span class="op">=</span> <span class="nam">self</span><span class="op">.</span><span class="nam">client</span><span class="op">.</span><span class="nam">get</span><span class="op">(</span><span class="nam">url</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t36" class="run"><span class="n"><a href="#t36">36</a></span><span class="t">        <span class="nam">serializer_data</span> <span class="op">=</span> <span class="nam">BookSerializer</span><span class="op">(</span><span class="nam">book_1</span><span class="op">)</span><span class="op">.</span><span class="nam">data</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t37" class="run"><span class="n"><a href="#t37">37</a></span><span class="t">        <span class="nam">self</span><span class="op">.</span><span class="nam">assertEqual</span><span class="op">(</span><span class="nam">status</span><span class="op">.</span><span class="nam">HTTP_200_OK</span><span class="op">,</span> <span class="nam">response</span><span class="op">.</span><span class="nam">status_code</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t38" class="run"><span class="n"><a href="#t38">38</a></span><span class="t">        <span class="nam">self</span><span class="op">.</span><span class="nam">assertEqual</span><span class="op">(</span><span class="nam">serializer_data</span><span class="op">,</span> <span class="nam">response</span><span class="op">.</span><span class="nam">data</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
 </div>
 <div id="footer">
     <div class="content">
         <p>
             <a class="nav" href="index.html">&#xab; index</a> &nbsp; &nbsp; <a class="nav" href="https://coverage.readthedocs.io">coverage.py v5.3</a>,
-            created at 2020-09-16 01:28 +0300
+            created at 2020-09-16 09:27 +0300
         </p>
     </div>
 </div>
